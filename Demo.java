@@ -40,6 +40,17 @@ public class Demo {
     }
     return newarray;
   }
+
+  public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue){
+    int[][] arr = new int[rows][];
+    for (int row = 0; row < arr.length; row ++) {
+      arr[row] = new int[(int) (Math.random() * cols)];
+      for (int col = 0; col < arr[row].length; col ++){
+        arr[row][col] = (int) (Math.random() * maxValue);
+      }
+    }
+    return arr;
+  }
   
   public static void main(String[] args) {
     if (args.length == 0)
