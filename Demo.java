@@ -7,6 +7,31 @@ public class Demo {
     System.out.println();
   }
 }
+
+public static String arrToString(int[] arr){
+String newstring = "{";
+if (arr.length == 0) {
+  return "{}";
+}
+for (int i = 0; i < arr.length; i++) {
+    newstring = newstring + arr[i] + ", ";
+  }
+newstring = newstring.substring(0, newstring.length()-2) + "}";
+return(newstring);
+}
+
+public static String arrayDeepToString(int[][] arr) {
+  String newstring = "{";
+  if (arr.length == 0) {
+    return "{{}}";
+  }
+  for (int row = 0; row < arr.length; row ++) {
+    newstring += arrToString(arr[row]) + ", ";
+    }
+  newstring = newstring.substring(0, newstring.length()-2) + "}";
+  return(newstring);
+  }
+
   public static void main(String[] args) {
     if (args.length == 0)
       printLoop(5);
