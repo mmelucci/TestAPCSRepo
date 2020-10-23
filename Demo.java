@@ -36,7 +36,7 @@ public class Demo {
     int[][] newarray = new int[rows][cols];
     for (int row = 0; row < newarray.length; row ++) {
       for (int col = 0; col < cols; col ++)
-        newarray[row][col] = (int) (Math.random() * maxValue);
+        newarray[row][col] = (int) Math.round(Math.random() * maxValue);
     }
     return newarray;
   }
@@ -44,14 +44,14 @@ public class Demo {
   public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue){
     int[][] arr = new int[rows][];
     for (int row = 0; row < arr.length; row ++) {
-      arr[row] = new int[(int) (Math.random() * cols)];
+      arr[row] = new int[(int) Math.round(Math.random() * cols)];
       for (int col = 0; col < arr[row].length; col ++){
-        arr[row][col] = (int) (Math.random() * maxValue);
+        arr[row][col] = (int) Math.round(Math.random() * maxValue);
       }
     }
     return arr;
   }
-  
+
   public static void main(String[] args) {
     if (args.length == 0)
       printLoop(5);
